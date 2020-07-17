@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AhorrosBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Cuentas">
+          <Key>
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="idCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DUI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombreCuenta" Type="varchar" MaxLength="20" />
+          <Property Name="entrada" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="salida" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="saldoActual" Type="decimal" Precision="18" Scale="5" />
+        </EntityType>
+        <EntityType Name="tb_Usuarios">
+          <Key>
+            <PropertyRef Name="DUI" />
+          </Key>
+          <Property Name="DUI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__tb_Cuentas__DUI__398D8EEE">
+          <End Role="tb_Usuarios" Type="Self.tb_Usuarios" Multiplicity="1" />
+          <End Role="tb_Cuentas" Type="Self.tb_Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuarios">
+              <PropertyRef Name="DUI" />
+            </Principal>
+            <Dependent Role="tb_Cuentas">
+              <PropertyRef Name="DUI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AhorrosBDModelStoreContainer">
+          <EntitySet Name="tb_Cuentas" EntityType="Self.tb_Cuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Usuarios" EntityType="Self.tb_Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tb_Cuentas__DUI__398D8EEE" Association="Self.FK__tb_Cuentas__DUI__398D8EEE">
+            <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
+            <End Role="tb_Cuentas" EntitySet="tb_Cuentas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AhorrosBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Cuentas">
+          <Key>
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="idCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DUI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="entrada" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="salida" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="saldoActual" Type="Decimal" Precision="18" Scale="5" />
+          <NavigationProperty Name="tb_Usuarios" Relationship="Self.FK__tb_Cuentas__DUI__398D8EEE" FromRole="tb_Cuentas" ToRole="tb_Usuarios" />
+        </EntityType>
+        <EntityType Name="tb_Usuarios">
+          <Key>
+            <PropertyRef Name="DUI" />
+          </Key>
+          <Property Name="DUI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_Cuentas" Relationship="Self.FK__tb_Cuentas__DUI__398D8EEE" FromRole="tb_Usuarios" ToRole="tb_Cuentas" />
+        </EntityType>
+        <Association Name="FK__tb_Cuentas__DUI__398D8EEE">
+          <End Role="tb_Usuarios" Type="Self.tb_Usuarios" Multiplicity="1" />
+          <End Role="tb_Cuentas" Type="Self.tb_Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Usuarios">
+              <PropertyRef Name="DUI" />
+            </Principal>
+            <Dependent Role="tb_Cuentas">
+              <PropertyRef Name="DUI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AhorrosBDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Cuentas" EntityType="Self.tb_Cuentas" />
+          <EntitySet Name="tb_Usuarios" EntityType="Self.tb_Usuarios" />
+          <AssociationSet Name="FK__tb_Cuentas__DUI__398D8EEE" Association="Self.FK__tb_Cuentas__DUI__398D8EEE">
+            <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
+            <End Role="tb_Cuentas" EntitySet="tb_Cuentas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AhorrosBDModelStoreContainer" CdmEntityContainer="AhorrosBDEntities">
+          <EntitySetMapping Name="tb_Cuentas">
+            <EntityTypeMapping TypeName="AhorrosBDModel.tb_Cuentas">
+              <MappingFragment StoreEntitySet="tb_Cuentas">
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="DUI" ColumnName="DUI" />
+                <ScalarProperty Name="nombreCuenta" ColumnName="nombreCuenta" />
+                <ScalarProperty Name="entrada" ColumnName="entrada" />
+                <ScalarProperty Name="salida" ColumnName="salida" />
+                <ScalarProperty Name="saldoActual" ColumnName="saldoActual" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Usuarios">
+            <EntityTypeMapping TypeName="AhorrosBDModel.tb_Usuarios">
+              <MappingFragment StoreEntitySet="tb_Usuarios">
+                <ScalarProperty Name="DUI" ColumnName="DUI" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
