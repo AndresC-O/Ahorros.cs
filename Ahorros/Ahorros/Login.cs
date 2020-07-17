@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ahorros.Modelo;
 
 namespace Ahorros
 {
@@ -89,7 +90,21 @@ namespace Ahorros
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            using(AhorrosBDEntities bd = new AhorrosBDEntities())
+            {
+                var Lista = from usuario in bd.tb_Usuarios
+                            where usuario.DUI == txtDUI.Text && usuario.contrasenia == txtPassword.Text
+                            select usuario;
 
+                if(Lista.Count() > 0)
+                {
+                    MessageBox.Show("Siu");
+                }
+                else
+                {
+                    MessageBox.Show("Noooooooou");
+                }
+            }
         }
     }
 }

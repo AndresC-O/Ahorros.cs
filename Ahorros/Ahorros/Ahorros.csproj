@@ -66,10 +66,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AhorrosBD.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\AhorrosBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AhorrosBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\AhorrosBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AhorrosBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Cuentas.cs">
+      <DependentUpon>AhorrosBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Usuarios.cs">
+      <DependentUpon>AhorrosBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,10 +128,19 @@
     <Content Include="Modelo\AhorrosBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AhorrosBD.Context.cs</LastGenOutput>
+      <DependentUpon>AhorrosBD.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modelo\AhorrosBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AhorrosBD.edmx</DependentUpon>
+      <LastGenOutput>AhorrosBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vistas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

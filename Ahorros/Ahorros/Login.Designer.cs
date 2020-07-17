@@ -70,7 +70,7 @@
             this.chBVerPass.Location = new System.Drawing.Point(13, 251);
             this.chBVerPass.Name = "chBVerPass";
             this.chBVerPass.Size = new System.Drawing.Size(127, 20);
-            this.chBVerPass.TabIndex = 9;
+            this.chBVerPass.TabIndex = 5;
             this.chBVerPass.Text = "Visualizar Caracteres";
             this.chBVerPass.UseVisualStyleBackColor = true;
             this.chBVerPass.CheckedChanged += new System.EventHandler(this.chBVerPass_CheckedChanged);
@@ -81,7 +81,7 @@
             this.panel2.Location = new System.Drawing.Point(13, 204);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 2);
-            this.panel2.TabIndex = 8;
+            this.panel2.TabIndex = 2;
             // 
             // txtDUI
             // 
@@ -92,7 +92,7 @@
             this.txtDUI.Location = new System.Drawing.Point(12, 179);
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(266, 24);
-            this.txtDUI.TabIndex = 7;
+            this.txtDUI.TabIndex = 1;
             this.txtDUI.Text = "00000000-0";
             this.txtDUI.Enter += new System.EventHandler(this.txtDUI_Enter);
             this.txtDUI.Leave += new System.EventHandler(this.txtDUI_Leave);
@@ -103,7 +103,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 246);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 2);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 4;
             // 
             // btnEntrar
             // 
@@ -113,7 +113,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(69, 300);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(156, 42);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 6;
             this.btnEntrar.Text = "Iniciar Sesión";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -127,7 +127,7 @@
             this.txtPassword.Location = new System.Drawing.Point(11, 221);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(266, 24);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -150,7 +150,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(244, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(43, 41);
-            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.TabIndex = 0;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -162,7 +162,7 @@
             this.pnInferior.Location = new System.Drawing.Point(0, 359);
             this.pnInferior.Name = "pnInferior";
             this.pnInferior.Size = new System.Drawing.Size(290, 46);
-            this.pnInferior.TabIndex = 0;
+            this.pnInferior.TabIndex = 7;
             // 
             // lklNuevoRegistro
             // 
