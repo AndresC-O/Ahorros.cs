@@ -103,6 +103,7 @@
             this.btnRegistrar.TabIndex = 18;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label5
             // 
@@ -130,6 +131,7 @@
             this.txtVerifyPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVerifyPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.txtVerifyPassword.Location = new System.Drawing.Point(147, 186);
+            this.txtVerifyPassword.MaxLength = 50;
             this.txtVerifyPassword.Name = "txtVerifyPassword";
             this.txtVerifyPassword.PasswordChar = '•';
             this.txtVerifyPassword.Size = new System.Drawing.Size(224, 24);
@@ -149,9 +151,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(133, 169);
+            this.panel4.Location = new System.Drawing.Point(136, 169);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 2);
+            this.panel4.Size = new System.Drawing.Size(235, 2);
             this.panel4.TabIndex = 13;
             // 
             // txtPassword
@@ -160,10 +162,11 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.Location = new System.Drawing.Point(133, 144);
+            this.txtPassword.Location = new System.Drawing.Point(136, 144);
+            this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Size = new System.Drawing.Size(237, 24);
+            this.txtPassword.Size = new System.Drawing.Size(234, 24);
             this.txtPassword.TabIndex = 12;
             // 
             // label3
@@ -192,9 +195,11 @@
             this.txtApellidos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.ForeColor = System.Drawing.SystemColors.Window;
             this.txtApellidos.Location = new System.Drawing.Point(116, 102);
+            this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(253, 24);
             this.txtApellidos.TabIndex = 9;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // label2
             // 
@@ -210,9 +215,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(110, 82);
+            this.panel1.Location = new System.Drawing.Point(116, 82);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 2);
+            this.panel1.Size = new System.Drawing.Size(254, 2);
             this.panel1.TabIndex = 7;
             // 
             // txtNombres
@@ -221,10 +226,12 @@
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombres.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNombres.Location = new System.Drawing.Point(109, 57);
+            this.txtNombres.Location = new System.Drawing.Point(115, 57);
+            this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(260, 24);
+            this.txtNombres.Size = new System.Drawing.Size(254, 24);
             this.txtNombres.TabIndex = 6;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label1
             // 
@@ -252,9 +259,11 @@
             this.txtDUI.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDUI.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDUI.Location = new System.Drawing.Point(63, 12);
+            this.txtDUI.MaxLength = 10;
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(305, 24);
             this.txtDUI.TabIndex = 3;
+            this.txtDUI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDUI_KeyPress);
             // 
             // btnRegresar
             // 
@@ -303,6 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNuevoRegistro";
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnIzquierdo.ResumeLayout(false);
             this.pnIzquierdo.PerformLayout();

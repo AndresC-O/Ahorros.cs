@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnCentral = new System.Windows.Forms.Panel();
+            this.lblAlerta = new System.Windows.Forms.Label();
             this.chBVerPass = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtDUI = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pnInferior = new System.Windows.Forms.Panel();
             this.lklNuevoRegistro = new System.Windows.Forms.LinkLabel();
-            this.lblAlerta = new System.Windows.Forms.Label();
             this.pnCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.pnInferior.SuspendLayout();
@@ -64,6 +64,18 @@
             this.pnCentral.Name = "pnCentral";
             this.pnCentral.Size = new System.Drawing.Size(290, 405);
             this.pnCentral.TabIndex = 0;
+            // 
+            // lblAlerta
+            // 
+            this.lblAlerta.AutoSize = true;
+            this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlerta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lblAlerta.Location = new System.Drawing.Point(10, 150);
+            this.lblAlerta.Name = "lblAlerta";
+            this.lblAlerta.Size = new System.Drawing.Size(40, 39);
+            this.lblAlerta.TabIndex = 8;
+            this.lblAlerta.Text = "Alerta\r\n\r\n\r\n";
+            this.lblAlerta.Visible = false;
             // 
             // chBVerPass
             // 
@@ -93,11 +105,13 @@
             this.txtDUI.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDUI.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDUI.Location = new System.Drawing.Point(12, 179);
+            this.txtDUI.MaxLength = 10;
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(266, 24);
             this.txtDUI.TabIndex = 1;
             this.txtDUI.Text = "00000000-0";
             this.txtDUI.Enter += new System.EventHandler(this.txtDUI_Enter);
+            this.txtDUI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDUI_KeyPress);
             this.txtDUI.Leave += new System.EventHandler(this.txtDUI_Leave);
             // 
             // panel1
@@ -181,18 +195,6 @@
             this.lklNuevoRegistro.TabStop = true;
             this.lklNuevoRegistro.Text = "Aún no soy un Usuario - ¡Regístrame!";
             this.lklNuevoRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklNuevoRegistro_LinkClicked);
-            // 
-            // lblAlerta
-            // 
-            this.lblAlerta.AutoSize = true;
-            this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlerta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.lblAlerta.Location = new System.Drawing.Point(10, 150);
-            this.lblAlerta.Name = "lblAlerta";
-            this.lblAlerta.Size = new System.Drawing.Size(40, 39);
-            this.lblAlerta.TabIndex = 8;
-            this.lblAlerta.Text = "Alerta\r\n\r\n\r\n";
-            this.lblAlerta.Visible = false;
             // 
             // Login
             // 

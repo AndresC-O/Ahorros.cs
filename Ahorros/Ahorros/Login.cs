@@ -91,19 +91,19 @@ namespace Ahorros
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            using(AhorrosBDEntities bd = new AhorrosBDEntities())
+            using (AhorrosBDEntities bd = new AhorrosBDEntities())
             {
                 var Lista = from usuario in bd.tb_Usuarios
                             where usuario.DUI == txtDUI.Text && usuario.contrasenia == txtPassword.Text
                             select usuario;
 
-                if(Lista.Count() > 0)
+                if (Lista.Count() > 0)
                 {
                     #region Alert Settings (Accediendo)
                     lblAlerta.Visible = true;
                     lblAlerta.Text = "                    Iniciando Sesión...";
                     lblAlerta.ForeColor = Color.White;
-                    #endregion 
+                    #endregion
                 }
                 else
                 {
@@ -112,9 +112,8 @@ namespace Ahorros
                     lblAlerta.Text = "DUI ó contraseña inválidos.";
                     lblAlerta.ForeColor = Color.FromArgb(219, 85, 85);
                     #endregion
-                    
                 }
-            }
+            } 
         }
 
         private void lklNuevoRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -122,6 +121,30 @@ namespace Ahorros
             FrmNuevoRegistro newRegister = new FrmNuevoRegistro();
             newRegister.Show();
             this.Hide();
+        }
+
+        private void txtDUI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
