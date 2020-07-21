@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ahorros.Modelo;
+using Ahorros.Vistas;
 
 namespace Ahorros
 {
@@ -98,13 +99,29 @@ namespace Ahorros
 
                 if(Lista.Count() > 0)
                 {
-                    MessageBox.Show("Siu");
+                    #region Alert Settings (Accediendo)
+                    lblAlerta.Visible = true;
+                    lblAlerta.Text = "                    Iniciando Sesión...";
+                    lblAlerta.ForeColor = Color.White;
+                    #endregion 
                 }
                 else
                 {
-                    MessageBox.Show("Noooooooou");
+                    #region Alert Settings (Denegado)
+                    lblAlerta.Visible = true;
+                    lblAlerta.Text = "DUI ó contraseña inválidos.";
+                    lblAlerta.ForeColor = Color.FromArgb(219, 85, 85);
+                    #endregion
+                    
                 }
             }
+        }
+
+        private void lklNuevoRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmNuevoRegistro newRegister = new FrmNuevoRegistro();
+            newRegister.Show();
+            this.Hide();
         }
     }
 }

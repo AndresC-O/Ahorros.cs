@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnCentral = new System.Windows.Forms.Panel();
             this.chBVerPass = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pnInferior = new System.Windows.Forms.Panel();
             this.lklNuevoRegistro = new System.Windows.Forms.LinkLabel();
+            this.lblAlerta = new System.Windows.Forms.Label();
             this.pnCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.pnInferior.SuspendLayout();
@@ -47,6 +49,7 @@
             // pnCentral
             // 
             this.pnCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.pnCentral.Controls.Add(this.lblAlerta);
             this.pnCentral.Controls.Add(this.chBVerPass);
             this.pnCentral.Controls.Add(this.panel2);
             this.pnCentral.Controls.Add(this.txtDUI);
@@ -169,6 +172,7 @@
             this.lklNuevoRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
             this.lklNuevoRegistro.AutoSize = true;
             this.lklNuevoRegistro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklNuevoRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lklNuevoRegistro.LinkColor = System.Drawing.Color.White;
             this.lklNuevoRegistro.Location = new System.Drawing.Point(8, 15);
             this.lklNuevoRegistro.Name = "lklNuevoRegistro";
@@ -176,6 +180,19 @@
             this.lklNuevoRegistro.TabIndex = 0;
             this.lklNuevoRegistro.TabStop = true;
             this.lklNuevoRegistro.Text = "Aún no soy un Usuario - ¡Regístrame!";
+            this.lklNuevoRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklNuevoRegistro_LinkClicked);
+            // 
+            // lblAlerta
+            // 
+            this.lblAlerta.AutoSize = true;
+            this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlerta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.lblAlerta.Location = new System.Drawing.Point(10, 150);
+            this.lblAlerta.Name = "lblAlerta";
+            this.lblAlerta.Size = new System.Drawing.Size(40, 39);
+            this.lblAlerta.TabIndex = 8;
+            this.lblAlerta.Text = "Alerta\r\n\r\n\r\n";
+            this.lblAlerta.Visible = false;
             // 
             // Login
             // 
@@ -184,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(290, 405);
             this.Controls.Add(this.pnCentral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -209,6 +227,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtDUI;
         private System.Windows.Forms.CheckBox chBVerPass;
+        private System.Windows.Forms.Label lblAlerta;
     }
 }
 
