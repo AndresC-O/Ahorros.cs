@@ -106,6 +106,7 @@ namespace Ahorros
                     #endregion
                     FrmMenu menu = new FrmMenu();
                     menu.Show();
+                    menu.lblnumDUI.Text = txtDUI.Text;
                     this.Hide();
                 }
                 else

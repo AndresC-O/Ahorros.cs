@@ -32,6 +32,8 @@
             this.pnSuperior = new System.Windows.Forms.Panel();
             this.flpPanelPrincipal = new System.Windows.Forms.FlowLayoutPanel();
             this.pnIzquierdo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblnumDUI = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMas = new System.Windows.Forms.Button();
             this.btnAbonos = new System.Windows.Forms.Button();
@@ -67,6 +69,8 @@
             // pnIzquierdo
             // 
             this.pnIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(20)))), ((int)(((byte)(46)))));
+            this.pnIzquierdo.Controls.Add(this.lblnumDUI);
+            this.pnIzquierdo.Controls.Add(this.label1);
             this.pnIzquierdo.Controls.Add(this.pictureBox1);
             this.pnIzquierdo.Controls.Add(this.btnMas);
             this.pnIzquierdo.Controls.Add(this.btnAbonos);
@@ -77,11 +81,35 @@
             this.pnIzquierdo.Size = new System.Drawing.Size(200, 512);
             this.pnIzquierdo.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(210)))), ((int)(((byte)(250)))));
+            this.label1.Location = new System.Drawing.Point(3, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DUI:";
+            // 
+            // lblnumDUI
+            // 
+            this.lblnumDUI.AutoSize = true;
+            this.lblnumDUI.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumDUI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(210)))), ((int)(((byte)(250)))));
+            this.lblnumDUI.Location = new System.Drawing.Point(75, 137);
+            this.lblnumDUI.Name = "lblnumDUI";
+            this.lblnumDUI.Size = new System.Drawing.Size(119, 25);
+            this.lblnumDUI.TabIndex = 3;
+            this.lblnumDUI.Text = "00000000-0";
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 25);
+            this.pictureBox1.Image = global::Ahorros.Properties.Resources.account;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -91,8 +119,8 @@
             this.btnMas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.btnMas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMas.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMas.Image = global::Ahorros.Properties.Resources.exit;
+            this.btnMas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(98)))), ((int)(((byte)(85)))));
+            this.btnMas.Image = global::Ahorros.Properties.Resources.exit__1_;
             this.btnMas.Location = new System.Drawing.Point(0, 459);
             this.btnMas.Name = "btnMas";
             this.btnMas.Size = new System.Drawing.Size(200, 41);
@@ -110,11 +138,11 @@
             this.btnAbonos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonos.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAbonos.Image = global::Ahorros.Properties.Resources.salary;
-            this.btnAbonos.Location = new System.Drawing.Point(0, 182);
+            this.btnAbonos.Location = new System.Drawing.Point(0, 222);
             this.btnAbonos.Name = "btnAbonos";
             this.btnAbonos.Size = new System.Drawing.Size(200, 41);
             this.btnAbonos.TabIndex = 1;
-            this.btnAbonos.Text = "        Abonos";
+            this.btnAbonos.Text = "       Abonos";
             this.btnAbonos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAbonos.UseVisualStyleBackColor = true;
             // 
@@ -126,7 +154,7 @@
             this.btnCuentas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCuentas.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCuentas.Image = global::Ahorros.Properties.Resources.saving_money;
-            this.btnCuentas.Location = new System.Drawing.Point(0, 135);
+            this.btnCuentas.Location = new System.Drawing.Point(0, 175);
             this.btnCuentas.Name = "btnCuentas";
             this.btnCuentas.Size = new System.Drawing.Size(200, 41);
             this.btnCuentas.TabIndex = 0;
@@ -150,7 +178,7 @@
             // 
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::Ahorros.Properties.Resources.minimize;
+            this.btnMinimizar.Image = global::Ahorros.Properties.Resources.minimize__1_;
             this.btnMinimizar.Location = new System.Drawing.Point(737, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(33, 34);
@@ -173,6 +201,7 @@
             this.Text = "FrmMenu";
             this.pnSuperior.ResumeLayout(false);
             this.pnIzquierdo.ResumeLayout(false);
+            this.pnIzquierdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -189,5 +218,7 @@
         private System.Windows.Forms.Button btnAbonos;
         private System.Windows.Forms.Button btnMas;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lblnumDUI;
+        private System.Windows.Forms.Label label1;
     }
 }

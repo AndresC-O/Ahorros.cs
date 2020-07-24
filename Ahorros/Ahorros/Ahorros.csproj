@@ -168,8 +168,9 @@
       <DependentUpon>AhorrosBD.edmx</DependentUpon>
       <LastGenOutput>AhorrosBD.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\kyc %281%29.png" />
-    <None Include="Resources\kyc.png" />
+    <None Include="Resources\minimize %281%29.png" />
+    <None Include="Resources\exit %281%29.png" />
+    <None Include="Resources\account.png" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\salary.png" />
     <None Include="Resources\saving-money.png" />
