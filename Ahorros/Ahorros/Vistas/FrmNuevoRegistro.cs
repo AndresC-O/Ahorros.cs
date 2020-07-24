@@ -67,6 +67,9 @@ namespace Ahorros.Vistas
                                 }
 
                                 MessageBox.Show("¡Registro completado con éxito!", "Completo.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FrmMenu menu = new FrmMenu();
+                                menu.Show();
+                                this.Close();
                             }
                             catch(Exception ex)
                             {

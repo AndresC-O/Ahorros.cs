@@ -104,6 +104,9 @@ namespace Ahorros
                     lblAlerta.Text = "                    Iniciando Sesión...";
                     lblAlerta.ForeColor = Color.White;
                     #endregion
+                    FrmMenu menu = new FrmMenu();
+                    menu.Show();
+                    this.Hide();
                 }
                 else
                 {
