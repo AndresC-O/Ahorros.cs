@@ -17,6 +17,20 @@ namespace Ahorros.Vistas
             InitializeComponent();
         }
 
+        public void AbrirFormulario(object FormHijo)
+        {
+            if (this.flpPanelPrincipal.Controls.Count > 0)
+            {
+                this.flpPanelPrincipal.Controls.RemoveAt(0);
+            }
+
+            Form fh = FormHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.flpPanelPrincipal.Controls.Add(fh);
+            this.flpPanelPrincipal.Tag = fh;
+            fh.Show();
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Estás seguro que deseas salir?", "¿?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -41,6 +55,11 @@ namespace Ahorros.Vistas
                 log.Show();
                 this.Close();
             }
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmPresentación());
         }
     }
 }

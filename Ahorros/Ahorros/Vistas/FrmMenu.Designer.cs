@@ -32,8 +32,8 @@
             this.pnSuperior = new System.Windows.Forms.Panel();
             this.flpPanelPrincipal = new System.Windows.Forms.FlowLayoutPanel();
             this.pnIzquierdo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblnumDUI = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMas = new System.Windows.Forms.Button();
             this.btnAbonos = new System.Windows.Forms.Button();
@@ -53,17 +53,16 @@
             this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(814, 40);
+            this.pnSuperior.Size = new System.Drawing.Size(910, 40);
             this.pnSuperior.TabIndex = 0;
             // 
             // flpPanelPrincipal
             // 
-            this.flpPanelPrincipal.AutoScroll = true;
             this.flpPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.flpPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpPanelPrincipal.Location = new System.Drawing.Point(200, 40);
             this.flpPanelPrincipal.Name = "flpPanelPrincipal";
-            this.flpPanelPrincipal.Size = new System.Drawing.Size(614, 512);
+            this.flpPanelPrincipal.Size = new System.Drawing.Size(710, 545);
             this.flpPanelPrincipal.TabIndex = 1;
             // 
             // pnIzquierdo
@@ -78,19 +77,8 @@
             this.pnIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnIzquierdo.Location = new System.Drawing.Point(0, 40);
             this.pnIzquierdo.Name = "pnIzquierdo";
-            this.pnIzquierdo.Size = new System.Drawing.Size(200, 512);
+            this.pnIzquierdo.Size = new System.Drawing.Size(200, 545);
             this.pnIzquierdo.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(210)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(3, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DUI:";
             // 
             // lblnumDUI
             // 
@@ -102,6 +90,17 @@
             this.lblnumDUI.Size = new System.Drawing.Size(119, 25);
             this.lblnumDUI.TabIndex = 3;
             this.lblnumDUI.Text = "00000000-0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(210)))), ((int)(((byte)(250)))));
+            this.label1.Location = new System.Drawing.Point(3, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "DUI:";
             // 
             // pictureBox1
             // 
@@ -121,7 +120,7 @@
             this.btnMas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(98)))), ((int)(((byte)(85)))));
             this.btnMas.Image = global::Ahorros.Properties.Resources.exit__1_;
-            this.btnMas.Location = new System.Drawing.Point(0, 459);
+            this.btnMas.Location = new System.Drawing.Point(0, 491);
             this.btnMas.Name = "btnMas";
             this.btnMas.Size = new System.Drawing.Size(200, 41);
             this.btnMas.TabIndex = 2;
@@ -167,7 +166,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::Ahorros.Properties.Resources.close__1_;
-            this.btnCerrar.Location = new System.Drawing.Point(775, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(869, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(33, 34);
             this.btnCerrar.TabIndex = 1;
@@ -179,7 +178,7 @@
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = global::Ahorros.Properties.Resources.minimize__1_;
-            this.btnMinimizar.Location = new System.Drawing.Point(737, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(831, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(33, 34);
             this.btnMinimizar.TabIndex = 0;
@@ -190,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 552);
+            this.ClientSize = new System.Drawing.Size(910, 585);
             this.Controls.Add(this.flpPanelPrincipal);
             this.Controls.Add(this.pnIzquierdo);
             this.Controls.Add(this.pnSuperior);
@@ -199,6 +198,7 @@
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenu";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.pnSuperior.ResumeLayout(false);
             this.pnIzquierdo.ResumeLayout(false);
             this.pnIzquierdo.PerformLayout();
