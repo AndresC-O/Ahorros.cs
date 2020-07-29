@@ -41,41 +41,49 @@ namespace Ahorros.Vistas
                 }
                 else
                 {
-                    using (AhorrosBDEntities bd = new AhorrosBDEntities())
+                    try
                     {
-                        var lista = from tbUsuario in bd.tb_Usuarios
-                                    where tbUsuario.DUI == txtDUI.Text
-                                    select tbUsuario;
+                        using (AhorrosBDEntities bd = new AhorrosBDEntities())
+                        {
+                            var lista = from tbUsuario in bd.tb_Usuarios
+                                        where tbUsuario.DUI == txtDUI.Text
+                                        select tbUsuario;
 
-                        if(lista.Count() > 0)
-                        {
-                            MessageBox.Show("¡El usuario ya existe, intente con otro!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            try
+                            if (lista.Count() > 0)
                             {
-                                using (AhorrosBDEntities db = new AhorrosBDEntities())
+                                MessageBox.Show("¡El usuario ya existe, intente con otro!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                try
                                 {
-                                    usuarios.DUI = txtDUI.Text;
-                                    usuarios.nombres = txtNombres.Text;
-                                    usuarios.apellidos = txtApellidos.Text;
-                                    usuarios.contrasenia = txtPassword.Text;
+                                    using (AhorrosBDEntities db = new AhorrosBDEntities())
+                                    {
+                                        usuarios.DUI = txtDUI.Text;
+                                        usuarios.nombres = txtNombres.Text;
+                                        usuarios.apellidos = txtApellidos.Text;
+                                        usuarios.contrasenia = txtPassword.Text;
 
-                                    bd.tb_Usuarios.Add(usuarios);
-                                    bd.SaveChanges();
+                                        bd.tb_Usuarios.Add(usuarios);
+                                        bd.SaveChanges();
+                                    }
+
+                                    MessageBox.Show("¡Registro completado con éxito!", "Completo.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    FrmMenu menu = new FrmMenu();
+                                    menu.lblnumDUI.Text = txtDUI.Text;
+                                    menu.Show();
+                                    this.Close();
                                 }
-
-                                MessageBox.Show("¡Registro completado con éxito!", "Completo.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                FrmMenu menu = new FrmMenu();
-                                menu.Show();
-                                this.Close();
-                            }
-                            catch(Exception ex)
-                            {
-                                MessageBox.Show("Ha ocurrido un error: \n\n" + ex, "Error desconocido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Ha ocurrido un error: \n\n" + ex, "Error desconocido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
+                    }
+                    catch(Exception exx)
+                    {
+                        MessageBox.Show("Ha ocurrido un error: \n\n" + exx, "Error desconocido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

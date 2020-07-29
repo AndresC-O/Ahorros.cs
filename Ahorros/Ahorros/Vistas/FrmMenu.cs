@@ -19,16 +19,16 @@ namespace Ahorros.Vistas
 
         public void AbrirFormulario(object FormHijo)
         {
-            if (this.flpPanelPrincipal.Controls.Count > 0)
+            if (this.pnPrincipal.Controls.Count > 0)
             {
-                this.flpPanelPrincipal.Controls.RemoveAt(0);
+                this.pnPrincipal.Controls.RemoveAt(0);
             }
 
             Form fh = FormHijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
-            this.flpPanelPrincipal.Controls.Add(fh);
-            this.flpPanelPrincipal.Tag = fh;
+            this.pnPrincipal.Controls.Add(fh);
+            this.pnPrincipal.Tag = fh;
             fh.Show();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -58,6 +58,11 @@ namespace Ahorros.Vistas
         }
 
         private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmPresentación());
+        }
+
+        private void pbLogoUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmPresentación());
         }

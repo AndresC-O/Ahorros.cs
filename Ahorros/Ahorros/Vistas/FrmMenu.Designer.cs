@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.pnSuperior = new System.Windows.Forms.Panel();
-            this.flpPanelPrincipal = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
             this.pnIzquierdo = new System.Windows.Forms.Panel();
             this.lblnumDUI = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLogoUsuario = new System.Windows.Forms.PictureBox();
             this.btnMas = new System.Windows.Forms.Button();
             this.btnAbonos = new System.Windows.Forms.Button();
             this.btnCuentas = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.pnPrincipal = new System.Windows.Forms.Panel();
             this.pnSuperior.SuspendLayout();
             this.pnIzquierdo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // pnSuperior
@@ -56,21 +56,36 @@
             this.pnSuperior.Size = new System.Drawing.Size(910, 40);
             this.pnSuperior.TabIndex = 0;
             // 
-            // flpPanelPrincipal
+            // btnCerrar
             // 
-            this.flpPanelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
-            this.flpPanelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpPanelPrincipal.Location = new System.Drawing.Point(200, 40);
-            this.flpPanelPrincipal.Name = "flpPanelPrincipal";
-            this.flpPanelPrincipal.Size = new System.Drawing.Size(710, 545);
-            this.flpPanelPrincipal.TabIndex = 1;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::Ahorros.Properties.Resources.close__1_;
+            this.btnCerrar.Location = new System.Drawing.Point(869, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(33, 34);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = global::Ahorros.Properties.Resources.minimize__1_;
+            this.btnMinimizar.Location = new System.Drawing.Point(831, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(33, 34);
+            this.btnMinimizar.TabIndex = 0;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // pnIzquierdo
             // 
             this.pnIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(20)))), ((int)(((byte)(46)))));
             this.pnIzquierdo.Controls.Add(this.lblnumDUI);
             this.pnIzquierdo.Controls.Add(this.label1);
-            this.pnIzquierdo.Controls.Add(this.pictureBox1);
+            this.pnIzquierdo.Controls.Add(this.pbLogoUsuario);
             this.pnIzquierdo.Controls.Add(this.btnMas);
             this.pnIzquierdo.Controls.Add(this.btnAbonos);
             this.pnIzquierdo.Controls.Add(this.btnCuentas);
@@ -102,15 +117,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DUI:";
             // 
-            // pictureBox1
+            // pbLogoUsuario
             // 
-            this.pictureBox1.Image = global::Ahorros.Properties.Resources.account;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbLogoUsuario.Image = global::Ahorros.Properties.Resources.account;
+            this.pbLogoUsuario.Location = new System.Drawing.Point(33, 6);
+            this.pbLogoUsuario.Name = "pbLogoUsuario";
+            this.pbLogoUsuario.Size = new System.Drawing.Size(128, 128);
+            this.pbLogoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbLogoUsuario.TabIndex = 0;
+            this.pbLogoUsuario.TabStop = false;
+            this.pbLogoUsuario.Click += new System.EventHandler(this.pbLogoUsuario_Click);
             // 
             // btnMas
             // 
@@ -161,36 +177,21 @@
             this.btnCuentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCuentas.UseVisualStyleBackColor = true;
             // 
-            // btnCerrar
+            // pnPrincipal
             // 
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = global::Ahorros.Properties.Resources.close__1_;
-            this.btnCerrar.Location = new System.Drawing.Point(869, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(33, 34);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::Ahorros.Properties.Resources.minimize__1_;
-            this.btnMinimizar.Location = new System.Drawing.Point(831, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(33, 34);
-            this.btnMinimizar.TabIndex = 0;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.pnPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.pnPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnPrincipal.Location = new System.Drawing.Point(200, 40);
+            this.pnPrincipal.Name = "pnPrincipal";
+            this.pnPrincipal.Size = new System.Drawing.Size(710, 545);
+            this.pnPrincipal.TabIndex = 2;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 585);
-            this.Controls.Add(this.flpPanelPrincipal);
+            this.Controls.Add(this.pnPrincipal);
             this.Controls.Add(this.pnIzquierdo);
             this.Controls.Add(this.pnSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -202,7 +203,7 @@
             this.pnSuperior.ResumeLayout(false);
             this.pnIzquierdo.ResumeLayout(false);
             this.pnIzquierdo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,13 +213,13 @@
         private System.Windows.Forms.Panel pnSuperior;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.FlowLayoutPanel flpPanelPrincipal;
         private System.Windows.Forms.Button btnCuentas;
         private System.Windows.Forms.Panel pnIzquierdo;
         private System.Windows.Forms.Button btnAbonos;
         private System.Windows.Forms.Button btnMas;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogoUsuario;
         public System.Windows.Forms.Label lblnumDUI;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnPrincipal;
     }
 }

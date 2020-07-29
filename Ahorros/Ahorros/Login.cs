@@ -91,33 +91,40 @@ namespace Ahorros
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            using (AhorrosBDEntities bd = new AhorrosBDEntities())
+            try
             {
-                var Lista = from usuario in bd.tb_Usuarios
-                            where usuario.DUI == txtDUI.Text && usuario.contrasenia == txtPassword.Text
-                            select usuario;
+                using (AhorrosBDEntities bd = new AhorrosBDEntities())
+                {
+                    var Lista = from usuario in bd.tb_Usuarios
+                                where usuario.DUI == txtDUI.Text && usuario.contrasenia == txtPassword.Text
+                                select usuario;
 
-                if (Lista.Count() > 0)
-                {
-                    #region Alert Settings (Accediendo)
-                    lblAlerta.Visible = true;
-                    lblAlerta.Text = "                    Iniciando Sesión...";
-                    lblAlerta.ForeColor = Color.White;
-                    #endregion
-                    FrmMenu menu = new FrmMenu();
-                    menu.Show();
-                    menu.lblnumDUI.Text = txtDUI.Text;
-                    this.Hide();
+                    if (Lista.Count() > 0)
+                    {
+                        #region Alert Settings (Accediendo)
+                        lblAlerta.Visible = true;
+                        lblAlerta.Text = "                    Iniciando Sesión...";
+                        lblAlerta.ForeColor = Color.White;
+                        #endregion
+                        FrmMenu menu = new FrmMenu();
+                        menu.Show();
+                        menu.lblnumDUI.Text = txtDUI.Text;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        #region Alert Settings (Denegado)
+                        lblAlerta.Visible = true;
+                        lblAlerta.Text = "DUI ó contraseña inválidos.";
+                        lblAlerta.ForeColor = Color.FromArgb(219, 85, 85);
+                        #endregion
+                    }
                 }
-                else
-                {
-                    #region Alert Settings (Denegado)
-                    lblAlerta.Visible = true;
-                    lblAlerta.Text = "DUI ó contraseña inválidos.";
-                    lblAlerta.ForeColor = Color.FromArgb(219, 85, 85);
-                    #endregion
-                }
-            } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado, consulte el error acá: \n\n" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lklNuevoRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
