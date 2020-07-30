@@ -66,5 +66,10 @@ namespace Ahorros.Vistas
         {
             AbrirFormulario(new FrmPresentación());
         }
+
+        private void btnCuentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmCuentas());
+        }
     }
 }
